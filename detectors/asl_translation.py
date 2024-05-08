@@ -16,11 +16,11 @@ class ASLTranslation:
                 continue
             else:
                 if class_id[0] != 26 :
-                    if output == "" and curr_conf > 0.8:
+                    if output == "" and curr_conf[0] > 0.8:
                         output += classes[class_id[0]]
                         max_conf = curr_conf[0]
                     elif output != "":
-                        if output[-1] == classes[class_id[0]] and curr_conf > max_conf:
+                        if output[-1] == classes[class_id[0]] and curr_conf[0] > max_conf:
                             max_conf = curr_conf[0]
                         elif output[-1] != classes[class_id[0]]:
                             output += classes[class_id[0]]
